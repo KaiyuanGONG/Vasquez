@@ -1,0 +1,401 @@
+// first run
+17MarFri
+Congratulations!
+Time taken for 1th day: 7.036000 seconds
+18MarSat
+Congratulations!
+Time taken for 2th day: 28.023000 seconds
+19MarSun
+No solution found.
+Congratulations!
+Time taken for 3th day: 35.535000 seconds
+20MarMon
+Congratulations!
+Time taken for 4th day: 17.248000 seconds
+21MarTue
+Congratulations!
+Time taken for 5th day: 36.001000 seconds
+22MarWed
+Congratulations!
+Time taken for 6th day: 24.627000 seconds
+23MarThu
+Congratulations!
+Time taken for 7th day: 39.080000 seconds
+24MarFri
+Congratulations!
+Time taken for 8th day: 38.030000 seconds
+25MarSat
+No solution found.
+Congratulations!
+Time taken for 9th day: 52.235000 seconds
+26MarSun
+No solution found.
+Congratulations!
+Time taken for 10th day: 24.903000 seconds
+27MarMon
+No solution found.
+Congratulations!
+Time taken for 11th day: 15.493000 seconds
+28MarTue
+Congratulations!
+Time taken for 12th day: 24.849000 seconds
+29MarWed
+Congratulations!
+Time taken for 13th day: 61.505000 seconds
+30MarThu
+Congratulations!
+Time taken for 14th day: 65.245000 seconds
+31MarFri
+No solution found.
+Congratulations!
+Time taken for 15th day: 45.193000 seconds
+01AprSat
+Placement error, extra space.
+Time taken for 16th day: 15.076000 seconds
+02AprSun
+Placement error, extra space.
+Time taken for 17th day: 27.108000 seconds
+03AprMon
+Placement error, extra space.
+Time taken for 18th day: 12.908000 seconds
+04AprTue
+Placement error, extra space.
+Time taken for 19th day: 11.986000 seconds
+Placement error, extra space.
+Time taken for 20th day: 21.979000 seconds
+06AprThu
+Placement error, extra space.
+Time taken for 21th day: 21.937000 seconds
+07AprFri
+Placement error, extra space.
+Time taken for 22th day: 13.385000 seconds
+08AprSat
+Placement error, extra space.
+Time taken for 23th day: 14.651000 seconds
+09AprSun
+Placement error, extra space.
+Time taken for 24th day: 27.030000 seconds
+10AprMon
+Congratulations!
+Time taken for 25th day: 14.623000 seconds
+11AprTue
+Congratulations!
+Time taken for 26th day: 23.054000 seconds
+12AprWed
+Congratulations!
+Time taken for 27th day: 21.958000 seconds
+13AprThu
+Congratulations!
+Time taken for 28th day: 28.924000 seconds
+14AprFri
+Congratulations!
+Time taken for 29th day: 20.430000 seconds
+15AprSat
+Congratulations!
+Time taken for 30th day: 16.203000 seconds
+16AprSun
+Congratulations!
+Time taken for 31th day: 23.888000 seconds
+
+
+
+
+
+// seconde time
+17MarFri
+Congratulations!
+Time taken for 1th day: 40.639000 seconds
+Total solutions: 3
+18MarSat
+Congratulations!
+Time taken for 2th day: 55.347000 seconds
+Total solutions: 5
+19MarSun
+Congratulations!
+Time taken for 3th day: 30.561000 seconds
+Total solutions: 5
+20MarMon
+Congratulations!
+Time taken for 4th day: 29.109000 seconds
+Total solutions: 7
+21MarTue
+Congratulations!
+Time taken for 5th day: 42.183000 seconds
+Total solutions: 9
+22MarWed
+Congratulations!
+Time taken for 6th day: 68.586000 seconds
+Total solutions: 11
+23MarThu
+Congratulations!
+Time taken for 7th day: 54.239000 seconds
+Total solutions: 19
+24MarFri
+Congratulations!
+Time taken for 8th day: 45.692000 seconds
+Total solutions: 21
+25MarSat
+Congratulations!
+Time taken for 9th day: 50.100000 seconds
+Total solutions: 21
+26MarSun
+Congratulations!
+Time taken for 10th day: 24.724000 seconds
+Total solutions: 21
+27MarMon
+Congratulations!
+Time taken for 11th day: 15.285000 seconds
+Total solutions: 21
+28MarTue
+Congratulations!
+Time taken for 12th day: 33.198000 seconds
+Total solutions: 27
+29MarWed
+Congratulations!
+Time taken for 13th day: 88.537000 seconds
+Total solutions: 38
+30MarThu
+Congratulations!
+Time taken for 14th day: 70.790000 seconds
+Time taken for 21th day: 194.125000 seconds
+Total solutions: 1959
+07AprFri
+Placement error, extra space.
+Time taken for 22th day: 166.072000 seconds
+Total solutions: 2300
+08AprSat
+Placement error, extra space.
+Total solutions: 2947
+14AprFri
+Congratulations!
+Time taken for 29th day: 62.915000 seconds
+Total solutions: 2949
+15AprSat
+Congratulations!
+Time taken for 30th day: 86.653000 seconds
+Total solutions: 2973
+16AprSun
+Congratulations!
+Time taken for 31th day: 34.363000 seconds
+Total solutions: 2975
+
+
+//third time
+Time taken for 2th day: 48.046000 seconds
+Total solutions: 2
+19MarSun
+Congratulations!
+Time taken for 3th day: 29.609000 seconds
+Total solutions: 0
+20MarMon
+Congratulations!
+Time taken for 4th day: 25.928000 seconds
+Total solutions: 2
+21MarTue
+Congratulations!
+Time taken for 5th day: 42.517000 seconds
+Total solutions: 2
+22MarWed
+Congratulations!
+Time taken for 6th day: 68.786000 seconds
+Total solutions: 2
+23MarThu
+Time taken for 14th day: 70.795000 seconds
+Total solutions: 4
+31MarFri
+Congratulations!
+Time taken for 15th day: 44.573000 seconds
+Total solutions: 0
+01AprSat
+Placement error, extra space.
+Time taken for 16th day: 200.682000 seconds
+Total solutions: 431
+02AprSun
+Placement error, extra space.
+Time taken for 17th day: 126.834000 seconds
+Total solutions: 191
+03AprMon
+Placement error, extra space.
+Time taken for 18th day: 95.093000 seconds
+Total solutions: 210
+04AprTue
+Placement error, extra space.
+Time taken for 19th day: 125.481000 seconds
+Total solutions: 614
+05AprWed
+Placement error, extra space.
+Time taken for 20th day: 168.796000 seconds
+Total solutions: 137
+06AprThu
+Placement error, extra space.
+Time taken for 21th day: 193.670000 seconds
+Total solutions: 334
+07AprFri
+Placement error, extra space.
+Time taken for 22th day: 167.044000 seconds
+Total solutions: 341
+08AprSat
+Placement error, extra space.
+Time taken for 23th day: 206.006000 seconds
+Total solutions: 431
+09AprSun
+Placement error, extra space.
+Time taken for 24th day: 125.342000 seconds
+Total solutions: 191
+10AprMon
+Congratulations!
+Time taken for 25th day: 25.017000 seconds
+Total solutions: 9
+11AprTue
+Congratulations!
+Time taken for 26th day: 32.174000 seconds
+Total solutions: 11
+12AprWed
+Congratulations!
+Time taken for 27th day: 46.025000 seconds
+Total solutions: 3
+13AprThu
+Congratulations!
+Time taken for 28th day: 111.755000 seconds
+Total solutions: 2
+14AprFri
+Congratulations!
+Time taken for 29th day: 125.265000 seconds
+Total solutions: 2
+15AprSat
+Congratulations!
+Time taken for 30th day: 169.134000 seconds
+Total solutions: 24
+16AprSun
+Congratulations!
+Time taken for 31th day: 67.839000 seconds
+Total solutions: 2
+
+
+
+//4th time
+17MarFri
+Congratulations!
+Time taken for 1th day: 39.776000 seconds
+Total solutions: 3
+18MarSat
+Congratulations!
+Time taken for 2th day: 49.356000 seconds
+Total solutions: 2
+19MarSun
+Congratulations!
+Time taken for 3th day: 30.634000 seconds
+Total solutions: 0
+20MarMon
+Congratulations!
+Time taken for 4th day: 26.721000 seconds
+Total solutions: 2
+21MarTue
+Congratulations!
+Time taken for 5th day: 44.736000 seconds
+Total solutions: 2
+22MarWed
+Congratulations!
+Time taken for 6th day: 76.551000 seconds
+Total solutions: 2
+23MarThu
+Congratulations!
+Time taken for 7th day: 57.802000 seconds
+Total solutions: 8
+24MarFri
+Congratulations!
+Time taken for 8th day: 48.204000 seconds
+Total solutions: 2
+25MarSat
+Congratulations!
+Time taken for 9th day: 51.591000 seconds
+Total solutions: 0
+26MarSun
+Congratulations!
+Time taken for 10th day: 26.622000 seconds
+Total solutions: 0
+27MarMon
+Congratulations!
+Time taken for 11th day: 17.073000 seconds
+Total solutions: 0
+28MarTue
+Congratulations!
+Time taken for 12th day: 37.511000 seconds
+Total solutions: 6
+29MarWed
+Congratulations!
+Time taken for 13th day: 94.109000 seconds
+Total solutions: 11
+30MarThu
+Congratulations!
+Time taken for 14th day: 74.969000 seconds
+Total solutions: 4
+31MarFri
+Congratulations!
+Time taken for 15th day: 45.432000 seconds
+Total solutions: 0
+01AprSat
+Congratulations!
+Time taken for 16th day: 146.839000 seconds
+Total solutions: 0
+02AprSun
+Congratulations!
+Time taken for 17th day: 34.345000 seconds
+Total solutions: 2
+03AprMon
+Congratulations!
+Time taken for 18th day: 23.573000 seconds
+Total solutions: 2
+04AprTue
+Congratulations!
+Time taken for 19th day: 34.249000 seconds
+Total solutions: 40
+05AprWed
+Congratulations!
+Time taken for 20th day: 43.290000 seconds
+Total solutions: 6
+06AprThu
+Congratulations!
+Time taken for 21th day: 42.621000 seconds
+Total solutions: 0
+07AprFri
+Congratulations!
+Time taken for 22th day: 72.870000 seconds
+Total solutions: 4
+08AprSat
+Congratulations!
+Time taken for 23th day: 89.094000 seconds
+Total solutions: 3
+09AprSun
+Congratulations!
+Time taken for 24th day: 33.006000 seconds
+Total solutions: 3
+10AprMon
+Congratulations!
+Time taken for 25th day: 25.592000 seconds
+Total solutions: 9
+11AprTue
+Congratulations!
+Time taken for 26th day: 30.867000 seconds
+Total solutions: 11
+12AprWed
+Congratulations!
+Time taken for 27th day: 37.535000 seconds
+Total solutions: 3
+13AprThu
+Congratulations!
+Time taken for 28th day: 57.372000 seconds
+Total solutions: 2
+14AprFri
+Congratulations!
+Time taken for 29th day: 62.101000 seconds
+Total solutions: 2
+15AprSat
+Congratulations!
+Time taken for 30th day: 85.018000 seconds
+Total solutions: 24
+16AprSun
+Congratulations!
+Time taken for 31th day: 33.506000 seconds
+Total solutions: 2
+
