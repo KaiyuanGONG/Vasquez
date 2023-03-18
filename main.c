@@ -2,6 +2,7 @@
 #include <stdio.h>
 #include <math.h>
 #include <string.h>
+#include <stdbool.h>
 
 // Define the ccorrect date
 char C[31][3][10];
@@ -38,154 +39,150 @@ int T[8][7] = {
 // Represents 10 blue graphic blocks
 // Consider the case of rotation, the maximum range does not exceed 4*4
 // 1 -> effective area, 0-> vacant area
-int B0[4][4] = {
-    0, 1, 0, 0,
-    0, 1, 0, 0,
-    0, 1, 0, 0,
-    1, 1, 0, 0};
-int B1[4][4] = {
-    0, 1, 0, 0,
-    0, 1, 0, 0,
-    1, 1, 1, 0,
-    0, 0, 0, 0};
-int B2[4][4] = {
-    1, 1, 1, 0,
-    1, 0, 0, 0,
-    1, 0, 0, 0,
-    0, 0, 0, 0};
-int B3[4][4] = {
-    1, 1, 0, 0,
-    0, 1, 0, 0,
-    0, 1, 1, 0,
-    0, 0, 0, 0};
-int B4[4][4] = {
-    0, 1, 0, 0,
-    0, 1, 0, 0,
-    1, 1, 0, 0,
-    1, 0, 0, 0};
-int B5[4][4] = {
-    1, 0, 1, 0,
-    1, 1, 1, 0,
-    0, 0, 0, 0,
-    0, 0, 0, 0};
-int B6[4][4] = {
-    1, 0, 0, 0,
-    1, 1, 0, 0,
-    1, 1, 0, 0,
-    0, 0, 0, 0};
-int B7[4][4] = {
-    0, 1, 0, 0,
-    0, 1, 0, 0,
-    1, 1, 0, 0,
-    0, 0, 0, 0};
-int B8[4][4] = {
-    1, 0, 0, 0,
-    1, 1, 0, 0,
-    0, 1, 0, 0,
-    0, 0, 0, 0};
-int B9[4][4] = {
-    0, 0, 0, 0,
-    0, 0, 0, 0,
-    0, 0, 0, 0,
-    1, 1, 1, 1};
-
+int B[10][4][4] = {
+    {{0, 1, 0, 0},
+     {0, 1, 0, 0},
+     {0, 1, 0, 0},
+     {1, 1, 0, 0}},
+    {{0, 1, 0, 0},
+     {0, 1, 0, 0},
+     {1, 1, 1, 0},
+     {0, 0, 0, 0}},
+    {{1, 1, 1, 0},
+     {1, 0, 0, 0},
+     {1, 0, 0, 0},
+     {0, 0, 0, 0}},
+    {{1, 1, 0, 0},
+     {0, 1, 0, 0},
+     {0, 1, 1, 0},
+     {0, 0, 0, 0}},
+    {{0, 1, 0, 0},
+     {0, 1, 0, 0},
+     {1, 1, 0, 0},
+     {1, 0, 0, 0}},
+    {{1, 0, 1, 0},
+     {1, 1, 1, 0},
+     {0, 0, 0, 0},
+     {0, 0, 0, 0}},
+    {{1, 0, 0, 0},
+     {1, 1, 0, 0},
+     {1, 1, 0, 0},
+     {0, 0, 0, 0}},
+    {{0, 1, 0, 0},
+     {0, 1, 0, 0},
+     {1, 1, 0, 0},
+     {0, 0, 0, 0}},
+    {{1, 0, 0, 0},
+     {1, 1, 0, 0},
+     {0, 1, 0, 0},
+     {0, 0, 0, 0}},
+    {{0, 0, 0, 0},
+     {0, 0, 0, 0},
+     {0, 0, 0, 0},
+     {1, 1, 1, 1}}};
 // Rotate the blue square
 // 90 -> Rotate 90 degrees clockwise, 180, 270 same
 
-void rotate(int input[4][4], int output[4][4], int angle)
-{
-    switch (angle)
-    {
-    case 90:
-        for (int i = 0; i < 4; i++)
-        {
-            for (int j = 0; j < 4; j++)
-            {
-                output[j][3 - i] = input[i][j];
-            }
+// Function to rotate the blocks
+void rotate(int id) {
+    int tmp[4][4];
+    for (int i = 0; i < 4; i++) {
+        for (int j = 0; j < 4; j++) {
+            tmp[j][3 - i] = B[id][i][j];
         }
-        break;
-    case 180:
-        for (int i = 0; i < 4; i++)
-        {
-            for (int j = 0; j < 4; j++)
-            {
-                output[3 - i][3 - j] = input[i][j];
-            }
-        }
-        break;
-    case 270:
-        for (int i = 0; i < 4; i++)
-        {
-            for (int j = 0; j < 4; j++)
-            {
-                output[3 - j][i] = input[i][j];
-            }
-        }
-        break;
-    default:
-        printf("Invalid angle. Please enter 90, 180, or 270.\n");
     }
+    memcpy(B[id], tmp, sizeof(tmp));
 }
 
 // Define the rotated array
-int B0_R[4][4], B1_R[4][4], B0_R[4][4], B0_R[4][4], B0_R[4][4],
-    B0_R[4][4], B0_R[4][4], B0_R[4][4], B0_R[4][4], B0_R[4][4] = {0};
+int B_R[10][4][4];
 
 // input an 2dimantional array
-void display(int array[][4], int rows, int columns)
-{
-    for (int i = 0; i < 4; i++)
-    {
-        for (int j = 0; j < 4; j++)
-        {
-            printf("%d\t", array[i][j]);
+void display() {
+    for (int i = 0; i < 8; i++) {
+        for (int j = 0; j < 7; j++) {
+            if (T[i][j] == 2) {
+                printf("#   ");
+            } else if (T[i][j] == 3) {
+                printf("%-3s", G[i][j]);
+            } else {
+                printf("    ");
+            }
         }
         printf("\n");
     }
 }
 
-// place blocks and check
-int place(int block[4][4], int row, int col)
-{
-    // Check if the block can be placed without overlapping with occupied positions or going outside the paper.
-    for (int i = 0; i < 4; i++)
-    {
-        for (int j = 0; j < 4; j++)
-        {
-            if (block[i][j] == 1)
-            {
-                int newRow = row + i;
-                int newCol = col + j;
-
-                if (newRow < 0 || newRow >= 8 || newCol < 0 || newCol >= 7)
-                {
-                    printf("Placement failed: outside of the paper.\n");
-                    return -1;
-                }
-
-                if (T[newRow][newCol] != 0)
-                {
-                    printf("Placement failed: overlapping with occupied position.\n");
-                    return -1;
+// according to the cond[][], initialize the T
+void _init_T(char Cond[][10]) {
+    for (int k = 0; k < 3; k++) {
+        for (int i = 0; i < 8; i++) {
+            for (int j = 0; j < 7; j++) {
+                if (strcmp(G[i][j], Cond[k]) == 0) {
+                    T[i][j] = 3;
                 }
             }
         }
     }
+}
 
-    // Place the block.
-    for (int i = 0; i < 4; i++)
-    {
-        for (int j = 0; j < 4; j++)
-        {
-            if (block[i][j] == 1)
-            {
-                T[row + i][col + j] = 1;
+// Check if the block can be placed without overlapping with occupied positions or going outside the paper.
+// Function to check if the block can be placed
+// Function to check if the block can be placed
+bool can_place(int id, int x, int y) {
+    for (int i = 0; i < 4; i++) {
+        for (int j = 0; j < 4; j++) {
+            if (B[id][i][j] && (x + i >= 8 || y + j >= 7 || T[x + i][y + j])) {
+                return false;
             }
         }
     }
+    return true;
+}
 
-    return 1;
+
+// Place the block.
+void place(int id, int x, int y) {
+    for (int i = 0; i < 4; i++) {
+        for (int j = 0; j < 4; j++) {
+            if (B[id][i][j]) {
+                T[x + i][y + j] = 1;
+            }
+        }
+    }
+}
+// Function to unplace the block
+void unplace(int id, int x, int y) {
+    for (int i = 0; i < 4; i++) {
+        for (int j = 0; j < 4; j++) {
+            if (B[id][i][j]) {
+                T[x + i][y + j] = 0;
+            }
+        }
+    }
+}
+// recursion
+// Function to solve the problem
+bool solve(int id) {
+    if (id == 10) {
+        return true;
+    }
+
+    for (int i = 0; i < 8; i++) {
+        for (int j = 0; j < 7; j++) {
+            for (int k = 0; k < 4; k++) {
+                if (can_place(id, i, j)) {
+                    place(id, i, j);
+                    if (solve(id + 1)) {
+                        return true;
+                    }
+                    unplace(id, i, j);
+                }
+                rotate(id);
+            }
+        }
+    }
+    return false;
 }
 
 // According to the given date, initialize 31 dates in array C
@@ -241,69 +238,90 @@ void _init_C(const char start_date[][10])
 }
 
 // valide the condition
-void valid(int T[8][7], const char *G[8][7], char Cond[][10]) {
+void valid(int T[8][7], char Cond[][10])
+{
     int border_error = 0;
-    int zeros_count = 0;
+    int threes_count = 0;
     int condition_error = 0;
 
-    for (int i = 0; i < 8; i++) {
-        for (int j = 0; j < 7; j++) {
-            if (T[i][j] == 2) {
-                if (strcmp(G[i][j], "#") != 0) {
+    for (int i = 0; i < 8; i++)
+    {
+        for (int j = 0; j < 7; j++)
+        {
+            if (T[i][j] == 2)
+            {
+                if (strcmp(G[i][j], "#") != 0)
+                {
                     border_error = 1;
                 }
-            } else if (T[i][j] == 0) {
-                zeros_count++;
+            }
+            else if (T[i][j] == 3)
+            {
+                threes_count++;
                 int found = 0;
-                for (int k = 0; k < 3; k++) {
-                    if (strcmp(G[i][j], Cond[k]) == 0) {
+                for (int k = 0; k < 3; k++)
+                {
+                    if (strcmp(G[i][j], Cond[k]) == 0)
+                    {
                         found = 1;
                         break;
                     }
                 }
-                if (!found) {
+                if (!found)
+                {
                     condition_error = 1;
                 }
             }
         }
     }
 
-    if (border_error) {
-        printf("Border damaged, result invalid.\n");
-    } else if (zeros_count != 3) {
-        printf("Placement error, extra space.\n");
-    } else if (condition_error) {
-        printf("Does not satisfy the condition.\n");
-    } else {
-        printf("Congratulations!\n");
-    }
-}
-
-int main(int argc, char *aegv[])
-{
-    // place the block
-    int row = 2;
-    int col = 1;
-
-    if (place(B0, row, col))
+    if (border_error)
     {
-        printf("Placement succeeded.\n");
+        printf("Border damaged, result invalid.\n");
+    }
+    else if (threes_count != 3)
+    {
+        printf("Placement error, extra space.\n");
+    }
+    else if (condition_error)
+    {
+        printf("Does not satisfy the condition.\n");
     }
     else
     {
-        printf("Placement failed.\n");
+        printf("Congratulations!\n");
+    }
+}
+int main() {
+
+    char Cond[][10] = {"17", "Mar", "Fri"};
+    _init_T(Cond);
+    if (solve(0)) {
+        // Output the result
+        /*
+        for (int i = 0; i < 8; i++) {
+            for (int j = 0; j < 7; j++) {
+                printf("%d", T[i][j]);
+            }
+            printf("\n");
+        }
+        */
+       display();
+    } else {
+        printf("No solution found.\n");
     }
 
-    // initialize 31 dates
     _init_C(Start);
-    for (int i = 0; i < 31; i++)
-    {
-        printf("%s %s %s\n", C[i][0], C[i][1], C[i][2]);
-    }
 
     // valide , check the result
-    char Cond[][10] = {"17", "Mar", "Fri"};
-    valid(T, G, Cond);
+    
+    valid(T, Cond);
 
+    for(int i = 0; i < 8; i++){
+        for (int j = 0; j < 7; j++){
+            printf("%d", T[i][j]);
+        }
+        printf("\n");
+    }
     return 0;
 }
