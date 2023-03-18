@@ -3,13 +3,14 @@
 #include <math.h>
 #include <string.h>
 #include <stdbool.h>
+#include <time.h>
 
 // Define the ccorrect date
 char C[31][3][10];
 const char Start[][10] = {"17", "Mar", "Fri"};
 
 // Define the arry for result
-char Cond[][10] = {"0"};
+char Cond[3][10] = {"0"};
 // char Result[][10] = {"0"};
 
 // Define a two-dimensional array to represent the cells on the green paper
@@ -84,10 +85,13 @@ int B[10][4][4] = {
 // 90 -> Rotate 90 degrees clockwise, 180, 270 same
 
 // Function to rotate the blocks
-void rotate(int id) {
+void rotate(int id)
+{
     int tmp[4][4];
-    for (int i = 0; i < 4; i++) {
-        for (int j = 0; j < 4; j++) {
+    for (int i = 0; i < 4; i++)
+    {
+        for (int j = 0; j < 4; j++)
+        {
             tmp[j][3 - i] = B[id][i][j];
         }
     }
@@ -98,14 +102,22 @@ void rotate(int id) {
 int B_R[10][4][4];
 
 // input an 2dimantional array
-void display() {
-    for (int i = 0; i < 8; i++) {
-        for (int j = 0; j < 7; j++) {
-            if (T[i][j] == 2) {
+void display()
+{
+    for (int i = 0; i < 8; i++)
+    {
+        for (int j = 0; j < 7; j++)
+        {
+            if (T[i][j] == 2)
+            {
                 printf("#   ");
-            } else if (T[i][j] == 3) {
+            }
+            else if (T[i][j] == 3)
+            {
                 printf("%-3s", G[i][j]);
-            } else {
+            }
+            else
+            {
                 printf("    ");
             }
         }
@@ -113,14 +125,26 @@ void display() {
     }
 }
 
-// according to the cond[][], initialize the T
-void _init_T(char Cond[][10]) {
-    for (int k = 0; k < 3; k++) {
-        for (int i = 0; i < 8; i++) {
-            for (int j = 0; j < 7; j++) {
-                if (strcmp(G[i][j], Cond[k]) == 0) {
+// According to the cond[][], initialize the T
+void _init_T(char Cond[][10])
+{
+    for (int i = 0; i < 8; i++)
+    {
+        for (int j = 0; j < 7; j++)
+        {
+            bool is_target = false;
+            for (int k = 0; k < 3; k++)
+            {
+                if (strcmp(G[i][j], Cond[k]) == 0)
+                {
                     T[i][j] = 3;
+                    is_target = true;
+                    break;
                 }
+            }
+            if ((!is_target && T[i][j] == 1) || (!is_target && T[i][j] == 3))
+            {
+                T[i][j] = 0;
             }
         }
     }
@@ -129,10 +153,14 @@ void _init_T(char Cond[][10]) {
 // Check if the block can be placed without overlapping with occupied positions or going outside the paper.
 // Function to check if the block can be placed
 // Function to check if the block can be placed
-bool can_place(int id, int x, int y) {
-    for (int i = 0; i < 4; i++) {
-        for (int j = 0; j < 4; j++) {
-            if (B[id][i][j] && (x + i >= 8 || y + j >= 7 || T[x + i][y + j])) {
+bool can_place(int id, int x, int y)
+{
+    for (int i = 0; i < 4; i++)
+    {
+        for (int j = 0; j < 4; j++)
+        {
+            if (B[id][i][j] && (x + i >= 8 || y + j >= 7 || T[x + i][y + j]))
+            {
                 return false;
             }
         }
@@ -140,22 +168,29 @@ bool can_place(int id, int x, int y) {
     return true;
 }
 
-
 // Place the block.
-void place(int id, int x, int y) {
-    for (int i = 0; i < 4; i++) {
-        for (int j = 0; j < 4; j++) {
-            if (B[id][i][j]) {
+void place(int id, int x, int y)
+{
+    for (int i = 0; i < 4; i++)
+    {
+        for (int j = 0; j < 4; j++)
+        {
+            if (B[id][i][j])
+            {
                 T[x + i][y + j] = 1;
             }
         }
     }
 }
 // Function to unplace the block
-void unplace(int id, int x, int y) {
-    for (int i = 0; i < 4; i++) {
-        for (int j = 0; j < 4; j++) {
-            if (B[id][i][j]) {
+void unplace(int id, int x, int y)
+{
+    for (int i = 0; i < 4; i++)
+    {
+        for (int j = 0; j < 4; j++)
+        {
+            if (B[id][i][j])
+            {
                 T[x + i][y + j] = 0;
             }
         }
@@ -163,26 +198,30 @@ void unplace(int id, int x, int y) {
 }
 // recursion
 // Function to solve the problem
-bool solve(int id) {
-    if (id == 10) {
-        return true;
+void solve(int id, int *solutionCount)
+{
+    if (id == 10)
+    {
+        (*solutionCount)++;
+        return;
     }
 
-    for (int i = 0; i < 8; i++) {
-        for (int j = 0; j < 7; j++) {
-            for (int k = 0; k < 4; k++) {
-                if (can_place(id, i, j)) {
+    for (int i = 0; i < 8; i++)
+    {
+        for (int j = 0; j < 7; j++)
+        {
+            for (int k = 0; k < 4; k++)
+            {
+                if (can_place(id, i, j))
+                {
                     place(id, i, j);
-                    if (solve(id + 1)) {
-                        return true;
-                    }
+                    solve(id + 1, solutionCount);
                     unplace(id, i, j);
                 }
                 rotate(id);
             }
         }
     }
-    return false;
 }
 
 // According to the given date, initialize 31 dates in array C
@@ -292,36 +331,45 @@ void valid(int T[8][7], char Cond[][10])
         printf("Congratulations!\n");
     }
 }
-int main() {
-
-    char Cond[][10] = {"17", "Mar", "Fri"};
-    _init_T(Cond);
-    if (solve(0)) {
-        // Output the result
-        /*
-        for (int i = 0; i < 8; i++) {
-            for (int j = 0; j < 7; j++) {
-                printf("%d", T[i][j]);
-            }
-            printf("\n");
-        }
-        */
-       display();
-    } else {
-        printf("No solution found.\n");
-    }
+int main()
+{
 
     _init_C(Start);
 
-    // valide , check the result
-    
-    valid(T, Cond);
+    for (int day = 0; day < 31; day++)
+    {
+        int solutionCount = 0;
 
-    for(int i = 0; i < 8; i++){
-        for (int j = 0; j < 7; j++){
-            printf("%d", T[i][j]);
+        for (int index = 0; index < 3; index++)
+        {
+            for (int s = 0; s < 10; s++)
+            {
+                Cond[index][s] = C[day][index][s];
+            }
+            printf("%s", Cond[index]);
         }
         printf("\n");
+
+        _init_T(Cond);
+
+        // Get the begining time
+        clock_t start = clock();
+
+        solve(0, &solutionCount);
+        
+    
+        // valide , check the result
+        valid(T, Cond);
+
+        // Get the ending time
+        clock_t end = clock();
+
+        // Calculate the time taken for this iteration
+        double time_taken = (double)(end - start) / CLOCKS_PER_SEC;
+
+        printf("Time taken for %dth day: %f seconds\n", day + 1, time_taken);
+        printf("Total solutions: %d\n", solutionCount);
     }
+
     return 0;
 }
