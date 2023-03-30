@@ -1,6 +1,10 @@
 # Calendrier
 
-[TOC]
+Project made by : 
+> GONG Kaiyuan <br>
+> EL-AJJOURI Safaa <br>
+> BOUTAHAR Mohammed <br>
+> AYDAR Yunus <br>
 
 ## Context
 
