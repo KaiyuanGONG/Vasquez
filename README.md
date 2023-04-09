@@ -4,7 +4,7 @@ Project made by :
 > GONG Kaiyuan <br>
 > EL-AJJOURI Safaa <br>
 > BOUTAHAR Mohammed <br>
-> AYDAR Yunus <br>
+> AYDAR Emile Yunus <br>
 
 ## Context
 
